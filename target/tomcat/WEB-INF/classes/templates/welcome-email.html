@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    <title th:remove="all"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+</head>
+<body style="margin: 0; padding: 0;">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+    <tr>
+        <td style="padding: 10px 0 30px 0;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="600"
+                   style="border: 1px solid #cccccc; border-collapse: collapse;">
+                <tbody>
+                <tr>
+                    <td align="center" bgcolor="black"
+                        style="/* padding: 0px 0 30px 0; */color: #8fc5da;font-size: 28px;font-weight: bold;font-family: Arial, sans-serif;background-color: #ffffff;">
+                        <img src="http://devsmart.fr/images/vermeg.png" alt="Reset Password" width="600" height="300"
+                             style="display: block;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                            <tr>
+                                <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
+                                    <b th:text="#{welcomeMailHeader}"></b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left"
+                                    style="padding: 20px 0 30px 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
+                                    <span th:text="#{hiMessage}"></span> <span th:text="${name}"></span>,
+                                    <br/>
+                                    <br/>
+                                    <span th:text="#{welcomeMailContent}"></span>
+                                    <br/>
+                                    <br/>
+                                    <span th:text="#{emailText}"></span>
+                                    <span th:text="${email}"></span>
+                                    <br/>
+                                    <span th:text="#{passwordText}"></span>
+                                    <span th:text="${password}"></span>
+                                    <br/>
+                                    <br/>
+                                    <a th:href="${platformLink}" target="_blank" th:text="#{clickHere}"></a>
+                                    <span th:text="#{toAccess}"></span>
+                                    <br/>
+                                    <br/>
+                                    <div>
+                                        <font face="arial, sans-serif" th:text="#{greeting}"></font>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td bgcolor="#e2e5ea" style="padding: 30px 30px 30px 30px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tbody>
+                                        <tr>
+                                            <td style="color: #000; font-family: Arial, sans-serif; font-size: 14px;"
+                                                width="75%">
+                                                © VERMEG, 2022<br/>
+                                            </td>
+                                            <td align="left" width="25%">
+                                                <table border="0" cellpadding="0" cellspacing="0">
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
