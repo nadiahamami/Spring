@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+      - MYSQL_DATABASE=vermeg
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - mysqldb:/var/lib/mysql
+      - "./db/script/setup.sql:/docker-entrypoint-initdb.d/setup.sql"
+
+  api:
+    container_name: api
+    image: spring-boot-api-tutorial-img
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - mysqldb
+    ports:
+      - 8080:8080
+    restart: always
+
+volumes:
+  mysqldb:

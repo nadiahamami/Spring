@@ -18,6 +18,6 @@ public interface UserService {
     void delete(long id);
     // Profile section
     User getProfile(Authentication authentication);
-    void updateProfile(Principal principal, User updatedUser) throws EmailAlreadyUsedException, MessagingException;
+        void updateProfile(Principal principal, User updatedUser) throws EmailAlreadyUsedException, MessagingException;
     List<Role> getAllRole();
 }

@@ -79,7 +79,7 @@ public class KpiController {
     public ApiResponse<List<IssueDetails>> getReportingData(@RequestBody Reporting reporting){
         String messageResponse = messageSource.getMessage("jira.issueType",
                 null, LocaleContextHolder.getLocale());
-        return new ApiResponse(200,  messageResponse  ,kpiService.reportingData(reporting));
+        return new ApiResponse<>(200,  messageResponse  ,kpiService.reportingData(reporting));
     }
 
     @PostMapping("generated_excel_reporting")
